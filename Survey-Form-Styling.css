@@ -5,7 +5,7 @@
     --form-bg-color: #ACA4D0;
     --main-text-color: #211118;
     --emphasis-text-color:#773652;
-    --accent-colors: #5A2769;
+    --accent-colors: #5A2769; /* RGB: rgb(90, 39, 105)*/
     font-family: 'Acme', sans-serif;
 }
 html{
@@ -37,15 +37,39 @@ html{
     grid-template-columns: 1fr 1fr;
     gap: 10px 10px;
     height: 80vh;
-    border: solid 5px var(--accent-colors);
+    border: solid 5px rgb(90, 39, 105, .5);
     border-radius: 5px;
+    justify-content: center;
+    align-content:center;
+
 }
 #description{
     grid-area: description;
+    grid-column: 1 / 3; /*Why isn't this stratching the description across the top? */
 }
-.formRow{
-    min-height: 1fr; /* don't think this is doing anything */
+.form-row{
+    min-height: 30px;
+    max-height: 1fr; /* don't think this is doing anything I think I ought to set height limits, does grid not resize text to fit? */
 }
+.prompt{
+    justify-content: end;
+}
+.input{
+    justify-content: start;
+    background-color: rgb(90, 39, 105, .5);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: color: var(--main-text-color);
+    opacity: .5; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: color: var(--main-text-color);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: color: var(--main-text-color);
+  }
 #name-prompt{
     grid-area: name-prompt;
 }
