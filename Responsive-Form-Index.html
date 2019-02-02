@@ -12,47 +12,39 @@
 <body>
     <h1 id="Title">Can I have yo Numba?</h1>
     <form id="survey-form">
-        <p id="Description">
+        <p id="description">
             DAMN! Oh Damn, okay, okay, S'cuse me, can I talk to you for a minute?
             Excuse me, can I talk to you for a minute?  The back of yo head, is ridiculus!
         </p>
 
-        <label class="prompt" id="name-prompt" label="name-prompt">
+        <label class="prompt" id="name-prompt" label="name-prompt"> <!-- User Story #4: Inside the form element, I am required to enter my name in a field with id="name" -->
             What's yo name?
         </label>
-        <input class="input" id="name-input" label="name-input" placeholder="Yvvonne?" type="text">
-
-        </input>
+        <input class="input" id="name-input" label="name-input" placeholder="Yvvonne?" type="text" />
         
         <label class="prompt" id="boyfriend-prompt" label="boyfriend-prompt">
             Do you have a boyfriend?
         </label>
-        <input class="input" id="boyfriend-input" label="boyfriend-input" placeholder="No?">
-    
-        </input>
+        <input class="input" id="boyfriend-input" label="boyfriend-input" placeholder="No?" />
 
-        <label class="prompt" id="age-prompt" label="age-prompt">
+        <label class="prompt" id="age-prompt" label="age-prompt"> <!--User Story #7: Inside the form, I can enter a number in a field with id="number"-->
             How old are you?
-        </label>
-        <input class="input" id="age-input" label="age-input" placeholder="18?">
+        </label> <!--User Story #8: If I enter non-numbers in the number input, I will see an HTML5 validation error. - not necessary, you cannot enter non-numbers -->
+        <input class="input" id="age-input" label="age-input" placeholder="18?" type="number" />
         
-        </input>
-
         <label class="prompt" id="email-prompt" label="email-prompt">
             Can I shoot you an email?  Where would I send it?
         </label>
-        <input class="input" id="email-input" label="email-input" placeholder="Yvvonne@gmail?">
+        <input class="input" id="email-input" type="email" label="email-input" placeholder="Yvvonne@gmail?" required /> <!--User Story #5: Inside the form element, I am required to enter an email in a field with id="email"-->
 
-        </input>
 
         <label class="prompt" id="number-prompt" label="number-prompt">
-            Can I have yo Numba? Can I have it? 
-            Can I please recieve the secret code that if entered telephonically will patch me through to you?
+            Can I have yo Numba? Can I have it?<br>
+            <span id="verbose">Can I please recieve the secret code that if entered telephonically will patch me through to you?</span>
         </label>
-        <input class="input" id="number-input" label="number-input" placeholder="(555) 555-5555?">
+        <input class="input" id="number-input" label="number-input" placeholder="(555) 555-5555?" />
 
-        </input>
-
+        <input id="submit-button" type="submit" value="Yeah, okay, thanks!" />
     </form>
 </body>
 </html>

@@ -7,6 +7,13 @@
     --emphasis-text-color:#773652;
     --accent-colors: #5A2769; /* RGB: rgb(90, 39, 105)*/
     font-family: 'Acme', sans-serif;
+    /* Sweater Color Scheme:
+    #C8AB8B - cornflour yellow
+    #A7442F - red argyle
+    #6F8F6E - green argyle
+    black - sweater background
+    grey - argyle lines
+    */
 }
 html{
     background-color: var(--main-bg-color);
@@ -20,11 +27,12 @@ html{
     margin-bottom: 20px;
     font-size: 2em;
 }
+@supports (display:grid){
 #survey-form{
     font-size: 1.25em;
     line-height: 1.25em;
     display: grid;
-    padding: 10px;
+    padding: 20px;
     background-color: var(--form-bg-color);
     margin-left: 10%;
     margin-right: 10%;
@@ -33,43 +41,41 @@ html{
                             "boyfriend-prompt boyfriend-input"
                             "age-prompt age-input"
                             "e-prompt  e-input"
-                            "phone-prompt  phone-input";
+                            "phone-prompt  phone-input"
+                            "submit-button submit-button";
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(autofit minmax(30px, 2fr));
     gap: 10px 10px;
     height: 80vh;
     border: solid 5px rgb(90, 39, 105, .5);
-    border-radius: 5px;
-    justify-content: center;
-    align-content:center;
-
+    border-radius: 50px;
+    overflow: hidden;
 }
 #description{
     grid-area: description;
-    grid-column: 1 / 3; /*Why isn't this stratching the description across the top? */
-}
-.form-row{
-    min-height: 30px;
-    max-height: 1fr; /* don't think this is doing anything I think I ought to set height limits, does grid not resize text to fit? */
+    grid-column: 1 / 3;
+    justify-content: center;
+    text-align: center;
+    grid-template-rows: (300px); /*nope*/
 }
 .prompt{
     justify-content: end;
+    text-align: end;
 }
 .input{
     justify-content: start;
     background-color: rgb(90, 39, 105, .5);
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: color: var(--main-text-color);
+    color: var(--main-text-color);
     opacity: .5; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: color: var(--main-text-color);
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: color: var(--main-text-color);
-  }
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--main-text-color);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--main-text-color);
+}
 #name-prompt{
     grid-area: name-prompt;
 }
@@ -93,6 +99,10 @@ html{
 }
 #email-input{
     grid-area: e-input;
+
+}
+#email-input, #age-input :invalid{
+    background-color: yellow;
 }
 #number-prompt{
     grid-area: phone-prompt;
@@ -100,10 +110,21 @@ html{
 #number-input{
     grid-area: phone-input;
 }
+#verbose {
+    font-size:.8em;
+}
+#submit-button{
+    grid-area: submit-button;
+    text-align: center;
+    Grid-template-columns: 50px;/*(minmax(100px, 20%))*/
+}
+}
 
 
 
 /*
 To do: design for mobile first, then media queries for font
 upsizing on desktop, the rest of the design should be the same.
+
+for ie/edge, put in @supports (display:grid){} for all my grid styling, I also want to make this work with flexbox styling for ie/edge
 */
