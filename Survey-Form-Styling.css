@@ -40,13 +40,14 @@ html{
                             "name-prompt  name-input"
                             "boyfriend-prompt boyfriend-input"
                             "age-prompt age-input"
+                            "sign-prompt sign-input"
                             "e-prompt  e-input"
                             "phone-prompt  phone-input"
                             "submit-button submit-button";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(autofill, 5px);
     grid-template-rows: repeat(autofit minmax(30px, 2fr));
     gap: 10px 10px;
-    height: 80vh;
+    height: 90vh;
     border: solid 5px rgb(90, 39, 105, .5);
     border-radius: 50px;
     overflow: hidden;
@@ -93,6 +94,20 @@ html{
 }
 #age-input{
     grid-area: age-input;
+}
+#sign-prompt{
+    grid-area: sign-prompt;
+}
+#sign-input{
+    grid-area: sign-input;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.button{
+    display: block;
+    min-width: 50px;
+    font-size: .8em;
 }
 #email-prompt{
     grid-area: e-prompt;
