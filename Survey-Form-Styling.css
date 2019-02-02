@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    /* Time to define my custom variables */
+    --main-bg-color: #504486;
+    --form-bg-color: #ACA4D0;
+    --main-text-color: #211118;
+    --emphasis-text-color:#773652;
+    --accent-colors: #5A2769;
+    font-family: 'Acme', sans-serif;
+}
+html{
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+#Title{
+    text-justify: center;
+    text-align: center;
+    height: 5vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+#survey-form{
+    font-size: 1.25em;
+    line-height: 1.25em;
+    display: grid;
+    padding: 10px;
+    background-color: var(--form-bg-color);
+    margin-left: 10%;
+    margin-right: 10%;
+    grid-template-areas:    "description description"
+                            "name-prompt  name-input"
+                            "boyfriend-prompt boyfriend-input"
+                            "age-prompt age-input"
+                            "e-prompt  e-input"
+                            "phone-prompt  phone-input";
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 10px;
+    height: 80vh;
+    border: solid 5px var(--accent-colors);
+    border-radius: 5px;
+}
+#description{
+    grid-area: description;
+}
+.formRow{
+    min-height: 1fr; /* don't think this is doing anything */
+}
+#name-prompt{
+    grid-area: name-prompt;
+}
+#name-input{
+    grid-area: name-input;
+}
+#boyfriend-prompt{
+    grid-area: boyfriend-prompt;
+}
+#boyfriend-input{
+    grid-area: boyfriend-input;
+}
+#age-prompt{
+    grid-area: age-prompt;
+}
+#age-input{
+    grid-area: age-input;
+}
+#email-prompt{
+    grid-area: e-prompt;
+}
+#email-input{
+    grid-area: e-input;
+}
+#number-prompt{
+    grid-area: phone-prompt;
+}
+#number-input{
+    grid-area: phone-input;
+}
+
+
+
+/*
+To do: design for mobile first, then media queries for font
+upsizing on desktop, the rest of the design should be the same.
+*/
