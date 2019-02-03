@@ -41,13 +41,16 @@ html{
                             "boyfriend-prompt boyfriend-input"
                             "age-prompt age-input"
                             "sign-prompt sign-input"
+                            "ponder-prompt ponder-input"
                             "e-prompt  e-input"
                             "phone-prompt  phone-input"
+                            "comment-prompt comment-input"
                             "submit-button submit-button";
     grid-template-columns: repeat(autofill, 5px);
     grid-template-rows: repeat(autofit minmax(30px, 2fr));
     gap: 10px 10px;
-    height: 90vh;
+    min-height: 80vh;
+    max-height: auto;
     border: solid 5px rgb(90, 39, 105, .5);
     border-radius: 50px;
     overflow: hidden;
@@ -55,17 +58,19 @@ html{
 #description{
     grid-area: description;
     grid-column: 1 / 3;
-    justify-content: center;
+    align-self: center;
     text-align: center;
     grid-template-rows: (300px); /*nope*/
 }
 .prompt{
     justify-content: end;
     text-align: end;
+    align-self: center;
 }
 .input{
     justify-content: start;
     background-color: rgb(90, 39, 105, .5);
+    border-radius: 5px;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--main-text-color);
@@ -106,7 +111,8 @@ html{
 }
 .button{
     display: block;
-    min-width: 50px;
+    min-width: 16%;
+    max-width: 1fr;
     font-size: .8em;
 }
 #email-prompt{
@@ -116,9 +122,11 @@ html{
     grid-area: e-input;
 
 }
+/*  This wasn't styling for the other input fields, so it was just confusing, commenting it out atm
 #email-input, #age-input :invalid{
     background-color: yellow;
-}
+} 
+*/
 #number-prompt{
     grid-area: phone-prompt;
 }
@@ -128,11 +136,120 @@ html{
 #verbose {
     font-size:.8em;
 }
+/* checkbox styling */
+/* The container */
+#ponder-prompt{
+    grid-area: ponder-prompt;
+}
+#ponder-input{
+    grid-area: ponder-input;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 25%;
+    max-width: 100%;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 10px 5px;
+  }
+  
+  /* Hide the browser's default checkbox */
+.container input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+.checkmark {
+    height: 25px;
+    width: 25px;
+    background-color: var(--form-bg-color);
+    border-radius: 5px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: var(--accent-colors);
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: var(--accent-colors);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    display: none;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin: 5px;
+    margin-left: 7px;
+  }
+  
+  /* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+.container .checkmark:after {
+    width: 5px;
+    height: 10px;
+    border: solid var(--form-bg-color);
+    border-width: 0 3px 3px 0;
+    align-self: center;
+    justify-self: center;
+  }
 #submit-button{
     grid-area: submit-button;
+    color: var(--form-bg-color);
     text-align: center;
-    Grid-template-columns: 50px;/*(minmax(100px, 20%))*/
+    min-width: 25%;
+    max-width: 100%; /* Not sure how to re-size submit button, was looking to make it a bit smaller on desktop*/
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
 }
+#comment-prompt{
+    grid-area: comment-prompt;
+}
+#comment-input{
+    grid-area: comment-input;
+}
+#clarification{
+    text-justify: center;
+    text-align: center;
+    height: 5vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+a, a:link, a:visited, a:hover, a:focus, a:active{
+    color: inherit;
+    text-decoration: none;
+}
+a:visited{
+    color: var(--form-bg-color);
+}
+a:hover, a:focus, a:active{
+    color: var(--emphasis-text-color);
+    text-decoration: underline;
+}
+
 }
 
 

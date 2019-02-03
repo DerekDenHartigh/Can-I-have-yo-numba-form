@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Responsive Form</title>
+    <title>Can I Have Yo #?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS Reset.css" />
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
@@ -90,6 +90,26 @@
             </div>
         </div>
 
+        <label class="prompt" id="ponder-prompt" label="what are you into pondering?">What are you into pondering?</label>
+            <div class="input" id="ponder-input" label="things you like to ponder">
+            <label class="container" value="things you ponder">Like Cinemas?
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container" value="things you ponder">Make believes?
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container" value="things you ponder">Celluloids?
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container" value="things you ponder">Up-dos?
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
         <label class="prompt" id="email-prompt" label="email-prompt">
             Can I shoot you an email?  Where would I send it?
         </label>
@@ -98,12 +118,17 @@
 
         <label class="prompt" id="number-prompt" label="number-prompt">
             Can I have yo Numba? Can I have it?<br>
-            <span id="verbose">Can I please recieve the secret code that if entered telephonically will patch me through to you?</span>
+            <span id="verbose">Can I please recieve the secret code that if entered telephonically<br/>will patch me through to you?</span>
         </label>
         <input class="input" id="number-input" label="number-input" placeholder="555-555-5555?" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" required />
 
+        <label class="prompt" id="comment-prompt">Was there anything else you would like me to know?<br/>The movie is about to start</label>
+        <textarea class="input" id="comment-input"></textarea>
+
         <input id="submit-button" type="submit" value="Yeah, okay, thanks!" />
     </form>
+
+    <h1 id="clarification" for="explanation">Okay, if you have no idea what this form is about, <a href="https://www.youtube.com/watch?v=kTFZyl7hfBw">click here</a> for an explanation</h1>
 </body>
 </html>
 <!--
@@ -121,8 +146,8 @@ User Story #10: For the name, email, and number input fields inside the form I c
 User Story #11: For the name, email, and number input fields, I can see placeholder text that gives me a description or instructions for each field. Yes 
 User Story #12: Inside the form element, I can select an option from a dropdown that has a corresponding id="dropdown". (different id, I have a dropdown though)
 User Story #13: Inside the form element, I can select a field from one or more groups of radio buttons. Each group should be grouped using the name attribute.  Yes
-User Story #14: Inside the form element, I can select several fields from a series of checkboxes, each of which must have a value attribute.
-User Story #15: Inside the form element, I am presented with a textarea at the end for additional comments.
-User Story #16: Inside the form element, I am presented with a button with id="submit" to submit all my inputs.
+User Story #14: Inside the form element, I can select several fields from a series of checkboxes, each of which must have a value attribute. Yes
+User Story #15: Inside the form element, I am presented with a textarea at the end for additional comments.  Yes
+User Story #16: Inside the form element, I am presented with a button with id="submit" to submit all my inputs. Yes
 
 -->
